@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Edge Fitness</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">GYM EDGE</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+  
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>BUILD YOUR <span>BODY</span> STRONG</h1>
+       
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            At Gym Edge, we are committed to helping you achieve your fitness goals. With cutting-edge equipment, 
+            expert trainers, and a welcoming environment, we ensure that every visit to our fitness center brings 
+            you closer to a healthier, stronger you. Whether you are a beginner or an experienced athlete, our 
+            programs are tailored to suit your needs and help you push beyond your limits.
+        </p>
+        <p>
+            Our state-of-the-art facilities include a wide variety of equipment, from cardio machines and free weights 
+            to functional fitness tools and specialized training zones. We pride ourselves on offering a clean, safe, 
+            and motivating space where you can focus on your health and wellness.
+        </p>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes">
+        <h2>Our Classes</h2>
+        <div class="classes">
+            <div class="class-card">
+                <img src="css/yoga.jpg" alt="Yoga Class">
+                <h3>Yoga</h3>
+                <p>Relax and rejuvenate with our expert-led yoga sessions.</p>
+            </div>
+            <div class="class-card">
+                <img src="css/cardio.webp" alt="Cardio Class">
+                <h3>Cardio</h3>
+                <p>Boost your endurance with high-intensity cardio workouts.</p>
+            </div>
+            <div class="class-card">
+                <img src="css/strength.webp" alt="Strength Training">
+                <h3>Strength</h3>
+                <p>Build muscle and increase strength with our training programs.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Join Section -->
+    <section id="join">
+        <h2>Join Us Today</h2>
+        <p>
+            Take the first step towards a healthier, stronger you. By joining Gym Edge, you gain access to the best 
+            fitness resources, including personalized coaching, advanced equipment, and a vibrant community dedicated 
+            to self-improvement. Don't wait—make the commitment to a better lifestyle now!
+        </p>
+        <ul>
+            <li>Personalized fitness plans tailored to your needs.</li>
+            <li>Access to all group classes, including yoga, cardio, and strength training.</li>
+            <li>Free health consultations with our expert trainers.</li>
+            <li>Exclusive discounts on supplements and fitness gear.</li>
+        </ul>
+        <a href="#contact" class="btn">Join Now</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+    <form id="contactForm">
+        <h3>Contact Us</h3>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from refreshing the page
+
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Store data in localStorage
+        const formData = { name, email, message };
+        const storedData = JSON.parse(localStorage.getItem('contactData')) || [];
+        storedData.push(formData);
+
+        localStorage.setItem('contactData', JSON.stringify(storedData));
+
+        // Clear the form
+        document.getElementById('contactForm').reset();
+
+        alert('Your message has been succesfully submitted!');
+    });
+</script>
+
+    
+</body>
+</html>
